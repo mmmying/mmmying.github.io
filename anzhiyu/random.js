@@ -1,3 +1,3 @@
-var posts=["2021/06/01/p001/","2021/08/08/p002/","2021/09/22/p003/","2021/10/19/p004/"];function toRandomPost(){
+var posts=["2021/03/28/p001/","2021/04/08/p002/","2021/04/22/p003/","2021/05/19/p004/","2021/06/01/p005/"];function toRandomPost(){
     pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
   };
