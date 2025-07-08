@@ -1,209 +1,73 @@
-<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>javascript 面试题（持续更新） | mu的技术知识库</title><meta name="keywords" content="javascript,面试"><meta name="author" content="mu"><meta name="copyright" content="mu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="javascript 面试题（持续更新）"><meta name="application-name" content="javascript 面试题（持续更新）"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="javascript 面试题（持续更新）"><meta property="og:url" content="http://example.com/2021/06/01/p005/index.html"><meta property="og:site_name" content="mu的技术知识库"><meta property="og:description" content="数据类型相关js有多少种数据类型 7种原始数据类型：null、undefined、boolean、number、string、symbol（es6新增）、bigint（es10新增） 1种引用类型：object  Symbol的特点和作用 每个 symbol 实例值都是唯一的 不能通过 new 构造"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="http://example.com/images/cover5.png"><meta property="article:author" content="mu"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/images/cover5.png"><meta name="description" content="数据类型相关js有多少种数据类型 7种原始数据类型：null、undefined、boolean、number、string、symbol（es6新增）、bigint（es10新增） 1种引用类型：object  Symbol的特点和作用 每个 symbol 实例值都是唯一的 不能通过 new 构造"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2021/06/01/p005/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
-  linkPageTop: undefined,
-  peoplecanvas: undefined,
-  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
-  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
-  LA51: undefined,
-  greetingBox: undefined,
-  twikooEnvId: '',
-  commentBarrageConfig:undefined,
-  music_page_default: "nav_music",
-  root: '/',
-  preloader: {"source":3},
-  friends_vue_info: undefined,
-  navMusic: true,
-  mainTone: {"mode":"api","api":"https://img2color-go.vercel.app/api?img=","cover_change":true},
-  authorStatus: {"skills":["💻 前端小废柴","🏃 户外爱好者","📷 摄影小达人"]},
-  algolia: undefined,
-  localSearch: undefined,
-  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
-  copy: {
-    success: '复制成功',
-    error: '复制错误',
-    noSupport: '浏览器不支持'
-  },
-  relativeDate: {
-    homepage: false,
-    simplehomepage: true,
-    post: false
-  },
-  runtime: '',
-  date_suffix: {
-    just: '刚刚',
-    min: '分钟前',
-    hour: '小时前',
-    day: '天前',
-    month: '个月前'
-  },
-  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: mu","link":"链接: ","source":"来源: mu的技术知识库","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
-  lightbox: 'fancybox',
-  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
-  source: {
-    justifiedGallery: {
-      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
-      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
-    }
-  },
-  isPhotoFigcaption: false,
-  islazyload: true,
-  isAnchor: false,
-  shortcutKey: undefined,
-  autoDarkmode: true
-}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
-  configTitle: 'mu的技术知识库',
-  title: 'javascript 面试题（持续更新）',
-  postAI: '',
-  pageFillDescription: '数据类型相关, js有多少种数据类型, Symbol的特点和作用, BigInt的特点和作用, null和undefined有什么区别, 怎么判断数据类型, 怎么进行数据类型转换, NaN是什么值, 原型、原型链、继承, 原型和原型链, 属性设置和屏蔽, JS中的‘类’, ES6 的 Class, 原型继承, 闭包, 事件循环, 异步编程, 回调, Promise, Generator, asyncx2Fawait数据类型相关有多少种数据类型种原始数据类型新增新增种引用类型的特点和作用每个实例值都是唯一的不能通过构造应用场景作为对象属性名类型的属性时不可被枚举的都不能枚举出利用该特性我们可以把一些不需要对外操作和访问的属性使用来定义使用来替代常量定义类的私有属性方法的特点和作用可以表示任意大的整数可以在整数后面加定义一个如或调用不需要特定不能用于对象中的方法不能和实例混合运算带小数的运算会被取整和不严格相等应用场景高精度时间戳大整数和有什么区别关于为的早起版本用低位存储变量的类型表示对象而全为零所以将判断为了是空对象指针转换为数值为是表示无的原始值转为数值时为怎么判断数据类型用判断基本数据类型和函数数组和对象用操作结果都是区分数组和对象的方式有方式一注意会报错因为也可看做代码块应给加个括号写成方式二属性方式三方式四对象可以区分所有类型怎么进行数据类型转换转换为数字转换为字符串转换为布尔这样竟然也可以是什么值是一个表示非数字的值不可写不可枚举不可配置判断可以使用或或者因为是唯一与自身不相等的值所以可以执行类似这样的自我比较和之间有区别仅当值为才为原型原型链继承原型和原型链中的对象有一个特殊的内置属性就是对其他对象的引用如果在对象上没有找到需要的属性或方法就会继续在关联的对象上查找层层向上找直到找到或者到对象原型为时结束这一系列链接就是原型链引用了可以通过来遍历原型链所有普通的链最终都会指向内置的当试图引用对象的属性时会触发操作对于默认的第一步是检查对象本身是否具有这个属性如果无法在对象本身找到就会继续访问对象的链会创建一个对象并把这个对象的关联到指定的对象以上例子创建了一个关联到的对象的指向本身是个空对象访问在本身没有找到这个属性访问到了找到了这个属性属性设置和屏蔽上没有这个属性则添加此时此为上图的将中的设置为只读此时不会在上创建属性只读属性会阻止链下层隐式创建同名属性这样做主要是为了模拟类属性的继承但实际上并不会发生类似的继承复制而且这个限制只存在于赋值中使并不会受到影响中的类调用时会创建其中的一步就是给一个内部的链接关联到指向的那个对象中只有对象中没有复制机制函数本身并不是构造函数中的构造函数可以理解为带的函数调用的的只是一个语法糖是的构造函数的一层包装类的所有方法都定义在类的上的指向类本身这与一致类的内部所有定义的方法都是不可枚举的这与不同为命令引入了一个属性该属性一般用在构造函数之中返回命令作用于的那个构造函数如果构造函数不是通过命令或调用的会返回可以用来确保构造函数只能通过调用可以用来写不能单独使用必须继承后才能用的类原型继承中并没有复制机制操作不是创建一个类的多个实例而是可以创建多个对象并把它们的关联到同一个对象这个机制就是中的原型继承通过让一个对象的原型指向另一个对象实现继承继承方式原型链继承构造函数继承组合继承原型式继承寄生组合式继承闭包一个函数中嵌套一个内部函数这个内部函数就形成了一个闭包闭包可以在一个内层函数中访问到外层函数的作用域在函数外部是访问不到的内部函数形成一个闭包经典循环问题输出个闭包的作用创建私有变量延长变量的生命周期实例两个计数器和维护它们各自的独立性每个闭包都是引用自己词法作用域内的变量不会相互影响事件循环事件循环负责执行代码收集和处理事件以及执行队列中的子任务是单线程的所有的任务需要排队前一个任务结束才会执行下一个任务所有同步任务都在主线程上执行形成一个执行栈主线程外有一个任务队列主线程的所有同步任务执行完成就会读取任务队列异步任务进入主线程开始执行主线程不断重复以上三步就是事件循环机制同步任务即主线程上的任务按照顺序由上下依次执当前个任务执完毕后才能执下个任务异步任务不进主线程是进任务队列的任务执行完毕之后会产生一个回调函数并且通知主线程当主线程上的任务执行完后就会调取最早通知自己的回调函数使其进入主线程中执行异步任务分为宏任务微任务宏任务宏任务是宿主发起的宏任务队列有多个微任务微任务是本身发起的微任务队列只有一个当前执行栈执行完毕后会立刻先处理所有微任务队列中的事件然后再去宏任务队列中取出一个事件同一次事件循环中微任务永远在宏任务之前执行异步编程是单线程的一次只能执行一个任务同步执行效率低异步主要解决了同步阻塞的问题回调回调函数是一段以参数形式传递给其他代码的可执行代码一般函数编写方和调用方都是我们自己但是回调函数编写方是我们自己但是调用方不是我们而是我们引用的其他模块即第三方库我们调用第三方库中的函数并把回调函数传递给第三方第三方中的函数调用我们编写的回调函数第三方库并不清楚后续的具体实现只能对外提供一个回调函数同步回调主程序等待回调函数的完成异步回调主程序和回调函数同时运行主程序和回调函数的执行位于不同的线程或进程中假设一个任务需要调用多个服务每一个服务都依赖于上一个服务的结果采用异步回调就会形成回调地狱同步异步是异步编程的一种解决方案有三种状态只有和的状态改变只要处于和状态就不会再变即一旦创建就无法取消但可以中断后续的链式调用当链中抛出一个错误时错误信息沿着链路向后传递直至被捕获利用这个特性能跳过链中函数的调用直至链路终点变相地结束链这里不会打印但是若链路中也对错误进行了捕获则后续的函数会继续执行这里不会打印链中捕获了错误此处会打印此处捕获不到错误并发异步操作如果数组中的某个被拒绝就会立即拒绝返回的并终止其他操作等待所有输入的完成不管其中是否有被拒绝返回第一个兑现的不会等待其他完成返回第一个敲定的无论兑现还是拒绝手写存放各的结果计数器因为是异步的用计数器保证每个都完成后再返回结果这种声明方式会定义一个生成器函数它返回一个对象关键字用于暂停和恢复生成器函数是提出的基于的解决异步的最终方案使用声明一个函数时该函数自动返回一个对象当遇到时函数会暂停执行等待的结果等待期间剩余操作会被挂起被安排在微任务队列中等待处理当被解决或拒绝时函数恢复执行执行栈为空时事件循环检查微任务队列并执行其中的任务',
-  isPost: true,
-  isHome: false,
-  isHighlightShrink: false,
-  isToc: true,
-  postUpdate: '2024-10-21 15:35:03',
-  postMainColor: '',
-}</script><noscript><style type="text/css">
-  #nav {
-    opacity: 1
-  }
-  .justified-gallery img {
-    opacity: 1
-  }
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+  <title>
+    
+    javascript 面试题（持续更新） 丨
+    
 
-  #recent-posts time,
-  #post-meta time {
-    display: inline !important
-  }
-</style></noscript><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
+    typo
+  </title>
+
+  
+  <link rel="shortcut icon" href="/icon.svg">
+  
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <link id="theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-light.css">
+  <script src="https://unpkg.com/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  
+
+  <!-- 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+  
+<link rel="stylesheet" href="/css/root.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/post.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <header class="header">
+  <section class="header-container">
+    <a class="logo" href="/">mu的技术知识库</a>
+    <ul class="nav">
       
-        get: key => {
-          const itemStr = localStorage.getItem(key)
+      <li><a href="/archives">archives</a></li>
       
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
+      <li><a href="/about">about</a></li>
       
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
-    
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
+    </ul>
+  </section>
+</header>
+  <main class="main">
+    <article class="post">
+  
+  <div class="post-title">javascript 面试题（持续更新）</div>
+  <div class="post-meta">
+    <div class="date">2021 六月 1日</div>
+    <div class="tags">
+      
+      <div class="tag-item">javascript</div>
+      
+      <div class="tag-item">面试</div>
+      
+    </div>
+  </div>
+  
 
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
-
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
-          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
-          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
-
-          if (t === undefined) {
-            if (isLightMode) activateLightMode()
-            else if (isDarkMode) activateDarkMode()
-            else if (isNotSpecified || hasNoSupport) {
-              const now = new Date()
-              const hour = now.getHours()
-              const isNight = hour <= 6 || hour >= 18
-              isNight ? activateDarkMode() : activateLightMode()
-            }
-            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-              if (saveToLocal.get('theme') === undefined) {
-                e.matches ? activateDarkMode() : activateLightMode()
-              }
-            })
-          } else if (t === 'light') activateLightMode()
-          else activateDarkMode()
-        
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://s2.loli.net/2024/10/01/rmP4RYUN9fCQIys.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
-  endLoading: () => {
-    document.getElementById('loading-box').classList.add("loaded");
-  },
-  initLoading: () => {
-    document.getElementById('loading-box').classList.remove("loaded")
-  }
-}
-window.addEventListener('load',()=> { preloader.endLoading() })
-setTimeout(function(){preloader.endLoading();},10000)
-
-if (true) {
-  document.addEventListener('pjax:send', () => { preloader.initLoading() })
-  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
-}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">mu的技术知识库</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://s2.loli.net/2024/10/01/kga4oDujyfrm9XB.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://s2.loli.net/2024/10/01/kga4oDujyfrm9XB.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://s2.loli.net/2024/10/01/idw8xkr2yXhqERM.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://s2.loli.net/2024/10/01/idw8xkr2yXhqERM.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/cookie/" style="font-size: 1.05rem;">cookie<sup>1</sup></a><a href="/tags/github/" style="font-size: 1.05rem;">github<sup>1</sup></a><a href="/tags/hexo/" style="font-size: 1.05rem;">hexo<sup>1</sup></a><a href="/tags/javascript/" style="font-size: 1.05rem;">javascript<sup>1</sup></a><a href="/tags/jwt/" style="font-size: 1.05rem;">jwt<sup>1</sup></a><a href="/tags/node/" style="font-size: 1.05rem;">node<sup>3</sup></a><a href="/tags/token/" style="font-size: 1.05rem;">token<sup>1</sup></a><a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 1.05rem;">面试<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/06/"><span class="card-archive-list-date">六月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">五月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/04/"><span class="card-archive-list-date">四月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/03/"><span class="card-archive-list-date">三月 2021</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url">前端</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/javascript/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>javascript</span></a><a class="article-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>面试</span></a></span></div></div><h1 class="post-title" itemprop="name headline">javascript 面试题（持续更新）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2021-06-01T15:41:52.000Z" title="发表于 2021-06-01 23:41:52">2021-06-01</time><span class="post-meta-separator"></span></span></div><div class="meta-secondline"></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/images/cover5.png"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2021/06/01/p005/"><header><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url">前端</a><a href="/tags/javascript/" tabindex="-1" itemprop="url">javascript</a><a href="/tags/%E9%9D%A2%E8%AF%95/" tabindex="-1" itemprop="url">面试</a><h1 id="CrawlerTitle" itemprop="name headline">javascript 面试题（持续更新）</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">mu</span><time itemprop="dateCreated datePublished" datetime="2021-06-01T15:41:52.000Z" title="发表于 2021-06-01 23:41:52">2021-06-01</time></header><h2 id="数据类型相关"><a href="#数据类型相关" class="headerlink" title="数据类型相关"></a>数据类型相关</h2><h3 id="js有多少种数据类型"><a href="#js有多少种数据类型" class="headerlink" title="js有多少种数据类型"></a>js有多少种数据类型</h3><ul>
+  <main class="post-content"><h2 id="数据类型相关"><a href="#数据类型相关" class="headerlink" title="数据类型相关"></a>数据类型相关</h2><h3 id="js有多少种数据类型"><a href="#js有多少种数据类型" class="headerlink" title="js有多少种数据类型"></a>js有多少种数据类型</h3><ul>
 <li>7种原始数据类型：null、undefined、boolean、number、string、symbol（es6新增）、bigint（es10新增）</li>
 <li>1种引用类型：object</li>
 </ul>
@@ -313,9 +177,9 @@ Object.getPrototypeOf(Function.prototype) === Object.prototype  // true</code></
 obj2.<span class="hljs-property">id</span> <span class="hljs-comment">// 1</span>
 obj2.<span class="hljs-property">name</span> <span class="hljs-comment">// &#x27;xx&#x27;</span></code></pre>
 <p>以上例子，创建了一个关联到 obj 的对象 obj2，obj2 的 <code>[[Prototype]]</code> 指向 obj，obj2 本身是个空对象，访问 obj2.id 在 obj2 本身没有找到 id 这个属性，访问到了 <code>[[Prototype]]</code> 找到了这个属性</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2021/06/01/p005/image.png" class="" title="alt">
+<img src="/2021/06/01/p005/image.png" class="" title="alt">
 
-<h4 id="属性设置和屏蔽"><a href="#属性设置和屏蔽" class="headerlink" title="属性设置和屏蔽"></a>属性设置和屏蔽</h4><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2021/06/01/p005/image-1.png" class="" title="alt">
+<h4 id="属性设置和屏蔽"><a href="#属性设置和屏蔽" class="headerlink" title="属性设置和屏蔽"></a>属性设置和屏蔽</h4><img src="/2021/06/01/p005/image-1.png" class="" title="alt">
 <pre><code class="hljs javascript"><span class="hljs-keyword">var</span> obj = &#123;
     <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>
 &#125;
@@ -457,18 +321,18 @@ Object.keys(es6Foo.prototype)  // []</code></pre>
 <p>同步任务：即主线程上的任务，按照顺序由上⾄下依次执⾏，当前⼀个任务执⾏完毕后，才能执⾏下⼀个任务。<br>异步任务：不进⼊主线程，⽽是进⼊任务队列的任务，执行完毕之后会产生一个回调函数，并且通知主线程。当主线程上的任务执行完后，就会调取最早通知自己的回调函数，使其进入主线程中执行。</p>
 <p>异步任务分为宏任务、微任务<br>宏任务：<br>()，setTimeout()，宏任务是宿主发起的，宏任务队列有多个<br>微任务：new Promise()，new MutationObserve()，微任务是 js 本身发起的，微任务队列只有一个</p>
 <p>当前执行栈执行完毕后会立刻先处理所有微任务队列中的事件，然后再去宏任务队列中取出一个事件。同一次事件循环中，微任务永远在宏任务之前执行。</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2021/06/01/p005/image-2.png" class="" title="alt">
+<img src="/2021/06/01/p005/image-2.png" class="" title="alt">
 
 <h2 id="异步编程"><a href="#异步编程" class="headerlink" title="异步编程"></a>异步编程</h2><p>js 是单线程的，一次只能执行一个任务，同步执行效率低，异步主要解决了同步阻塞的问题</p>
 <h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>回调函数是一段以参数形式传递给其他代码的可执行代码。</p>
 <p>一般函数编写方和调用方都是我们自己，但是回调函数编写方是我们自己，但是调用方不是我们，而是我们引用的其他模块即第三方库，我们调用第三方库中的函数，并把回调函数传递给第三方，第三方中的函数调用我们编写的回调函数。第三方库并不清楚后续的具体实现，只能对外提供一个回调函数。</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2021/06/01/p005/image-3.png" class="" title="alt">
+<img src="/2021/06/01/p005/image-3.png" class="" title="alt">
 
 <p>同步回调：主程序等待回调函数的完成</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2021/06/01/p005/image-4.png" class="" title="alt">
+<img src="/2021/06/01/p005/image-4.png" class="" title="alt">
 
 <p>异步回调：主程序和回调函数同时运行，主程序和回调函数的执行位于不同的线程或进程中</p>
-<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/2021/06/01/p005/image-5.png" class="" title="alt">
+<img src="/2021/06/01/p005/image-5.png" class="" title="alt">
 
 <p>假设一个任务需要调用多个服务，每一个服务都依赖于上一个服务的结果，采用异步回调就会形成回调地狱</p>
 <pre><code class="hljs javascript"><span class="hljs-comment">// 同步</span>
@@ -559,148 +423,22 @@ d = <span class="hljs-title class_">GetServiceD</span>(c);
 <li>等待期间，剩余操作会被挂起，被安排在微任务队列中等待处理</li>
 <li>当 Promise 被解决或拒绝时，async 函数恢复执行，执行栈为空时，事件循环检查微任务队列，并执行其中的任务</li>
 </ul>
-</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/10/01/rmP4RYUN9fCQIys.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/10/01/rmP4RYUN9fCQIys.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">mu</div><div class="post-copyright__author_desc">太阳强烈，水波温柔</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2021/06/01/p005/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2021/06/01/p005/')">javascript 面试题（持续更新）</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://s2.loli.net/2024/10/01/kga4oDujyfrm9XB.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/10/01/kga4oDujyfrm9XB.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://s2.loli.net/2024/10/01/idw8xkr2yXhqERM.jpg" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/10/01/idw8xkr2yXhqERM.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2021/06/01/p005/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=javascript 面试题（持续更新）&amp;url=http://example.com/2021/06/01/p005/&amp;pic=/images/cover5.png" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
-  var currentPageUrl = window.location.href;
-  var input = document.createElement("input");
-  input.setAttribute("value", currentPageUrl);
-  document.body.appendChild(input);
-  input.select();
-  input.setSelectionRange(0, 99999);
-  document.execCommand("copy");
-  document.body.removeChild(input);
-}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">mu的技术知识库</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/javascript/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>javascript<span class="tagsPageCount">1</span></a><a class="post-meta__box__tags" href="/tags/%E9%9D%A2%E8%AF%95/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>面试<span class="tagsPageCount">1</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="/images/cover5.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2021/05/19/p004/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/cover4.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">不要再把 __dirname、__filename 当全局变量了！</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://s2.loli.net/2024/10/01/rmP4RYUN9fCQIys.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description">持续学习，不断成长，步履不停，成为终身学习者</div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/"><h1 class="author-info__name">mu</h1><div class="author-info__desc">太阳强烈，水波温柔</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/mmmying" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来看我的博客鸭~</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3"><span class="toc-number">1.</span> <span class="toc-text">数据类型相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#js%E6%9C%89%E5%A4%9A%E5%B0%91%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">js有多少种数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Symbol%E7%9A%84%E7%89%B9%E7%82%B9%E5%92%8C%E4%BD%9C%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">Symbol的特点和作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BigInt%E7%9A%84%E7%89%B9%E7%82%B9%E5%92%8C%E4%BD%9C%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">BigInt的特点和作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null%E5%92%8Cundefined%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">1.4.</span> <span class="toc-text">null和undefined有什么区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.5.</span> <span class="toc-text">怎么判断数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.6.</span> <span class="toc-text">怎么进行数据类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NaN%E6%98%AF%E4%BB%80%E4%B9%88%E5%80%BC"><span class="toc-number">1.7.</span> <span class="toc-text">NaN是什么值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E3%80%81%E5%8E%9F%E5%9E%8B%E9%93%BE%E3%80%81%E7%BB%A7%E6%89%BF"><span class="toc-number">2.</span> <span class="toc-text">原型、原型链、继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-number">2.1.</span> <span class="toc-text">原型和原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE%E5%92%8C%E5%B1%8F%E8%94%BD"><span class="toc-number">2.1.1.</span> <span class="toc-text">属性设置和屏蔽</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS%E4%B8%AD%E7%9A%84%E2%80%98%E7%B1%BB%E2%80%99"><span class="toc-number">2.2.</span> <span class="toc-text">JS中的‘类’</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6-%E7%9A%84-Class"><span class="toc-number">2.3.</span> <span class="toc-text">ES6 的 Class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%9E%8B%E7%BB%A7%E6%89%BF"><span class="toc-number">2.4.</span> <span class="toc-text">原型继承</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">3.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><span class="toc-number">4.</span> <span class="toc-text">事件循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B"><span class="toc-number">5.</span> <span class="toc-text">异步编程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9E%E8%B0%83"><span class="toc-number">5.1.</span> <span class="toc-text">回调</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Promise"><span class="toc-number">5.2.</span> <span class="toc-text">Promise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generator"><span class="toc-number">5.3.</span> <span class="toc-text">Generator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#async-await"><span class="toc-number">5.4.</span> <span class="toc-text">async&#x2F;await</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/06/01/p005/" title="javascript 面试题（持续更新）"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/cover5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="javascript 面试题（持续更新）"/></a><div class="content"><a class="title" href="/2021/06/01/p005/" title="javascript 面试题（持续更新）">javascript 面试题（持续更新）</a><time datetime="2021-06-01T15:41:52.000Z" title="发表于 2021-06-01 23:41:52">2021-06-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/05/19/p004/" title="不要再把 __dirname、__filename 当全局变量了！"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/cover4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="不要再把 __dirname、__filename 当全局变量了！"/></a><div class="content"><a class="title" href="/2021/05/19/p004/" title="不要再把 __dirname、__filename 当全局变量了！">不要再把 __dirname、__filename 当全局变量了！</a><time datetime="2021-05-19T08:23:07.000Z" title="发表于 2021-05-19 16:23:07">2021-05-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/22/p003/" title="你搞懂module.exports和exports了吗？"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/cover3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="你搞懂module.exports和exports了吗？"/></a><div class="content"><a class="title" href="/2021/04/22/p003/" title="你搞懂module.exports和exports了吗？">你搞懂module.exports和exports了吗？</a><time datetime="2021-04-22T07:48:28.000Z" title="发表于 2021-04-22 15:48:28">2021-04-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/08/p002/" title="node中使用jwt实现token身份验证"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/cover2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="node中使用jwt实现token身份验证"/></a><div class="content"><a class="title" href="/2021/04/08/p002/" title="node中使用jwt实现token身份验证">node中使用jwt实现token身份验证</a><time datetime="2021-04-08T12:00:08.000Z" title="发表于 2021-04-08 20:00:08">2021-04-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/28/p001/" title="一篇带你使用 github pages + hexo 快速搭建个人博客"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/images/cover1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一篇带你使用 github pages + hexo 快速搭建个人博客"/></a><div class="content"><a class="title" href="/2021/03/28/p001/" title="一篇带你使用 github pages + hexo 快速搭建个人博客">一篇带你使用 github pages + hexo 快速搭建个人博客</a><time datetime="2021-03-28T13:20:55.000Z" title="发表于 2021-03-28 21:20:55">2021-03-28</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="mu" target="_blank">mu</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">2</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 隧道</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/cookie/" style="font-size: 0.88rem;">cookie<sup>1</sup></a><a href="/tags/github/" style="font-size: 0.88rem;">github<sup>1</sup></a><a href="/tags/hexo/" style="font-size: 0.88rem;">hexo<sup>1</sup></a><a href="/tags/javascript/" style="font-size: 0.88rem;">javascript<sup>1</sup></a><a href="/tags/jwt/" style="font-size: 0.88rem;">jwt<sup>1</sup></a><a href="/tags/node/" style="font-size: 0.88rem;">node<sup>3</sup></a><a href="/tags/token/" style="font-size: 0.88rem;">token<sup>1</sup></a><a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 0.88rem;">面试<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.28/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
-var HoldLog = console.log;
-console.log = function () {};
-let now1 = new Date();
-queueMicrotask(() => {
-  const Log = function () {
-    HoldLog.apply(console, arguments);
-  }; //在恢复前输出日志
-  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
-  now1.setTime(now1.getTime() + 250);
-  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
-  const dnum = Math.floor(days);
-  const ascll = [
-    `欢迎使用安知鱼!`,
-    `生活明朗, 万物可爱`,
-    `
-        
-       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
-      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
-      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
-      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
-      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
-      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
-        
-        `,
-    "已上线",
-    dnum,
-    "天",
-    "©2020 By 安知鱼 V1.6.12",
-  ];
-  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+</main>
 
-  setTimeout(
-    Log.bind(
-      console,
-      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
-      "color:#425AEF",
-      "",
-      "color:#425AEF",
-      "color:#425AEF",
-      "",
-      "color:#425AEF",
-      ""
-    )
-  );
-  setTimeout(
-    Log.bind(
-      console,
-      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
-      "color:white; background-color:#4fd953",
-      "",
-      "",
-      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
-    )
-  );
+</article>
 
-  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
 
-  setTimeout(
-    console.warn.bind(
-      console,
-      "%c ⚡ Powered by 安知鱼 %c 你正在访问 mu 的博客.",
-      "color:white; background-color:#f0ad4e",
-      ""
-    )
-  );
+<script src="/js/highlight.js"></script>
 
-  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
-
-  setTimeout(
-    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
-  );
-});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
-</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
-var pjax = new Pjax({
-  elements: 'a:not([target="_blank"])',
-  selectors: pjaxSelectors,
-  cacheBust: false,
-  analytics: false,
-  scrollRestoration: false
-})
-
-document.addEventListener('pjax:send', function () {
-  // removeEventListener scroll 
-  anzhiyu.removeGlobalFnEvent('pjax')
-  anzhiyu.removeGlobalFnEvent('themeChange')
-
-  document.getElementById('rightside').classList.remove('rightside-show')
+  </main>
+  <footer class="footer">
   
-  if (window.aplayers) {
-    for (let i = 0; i < window.aplayers.length; i++) {
-      if (!window.aplayers[i].options.fixed) {
-        window.aplayers[i].destroy()
-      }
-    }
-  }
+  <span>Copyright © 2024 typo</span>
+  
+</footer>
+  
+<script src="/js/theme.js"></script>
 
-  typeof typed === 'object' && typed.destroy()
+</body>
 
-  //reset readmode
-  const $bodyClassList = document.body.classList
-  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
-})
-
-document.addEventListener('pjax:complete', function () {
-  window.refreshFn()
-
-  document.querySelectorAll('script[data-pjax]').forEach(item => {
-    const newScript = document.createElement('script')
-    const content = item.text || item.textContent || item.innerHTML || ""
-    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
-    newScript.appendChild(document.createTextNode(content))
-    item.parentNode.replaceChild(newScript, item)
-  })
-
-  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
-
-  typeof panguInit === 'function' && panguInit()
-
-  // google analytics
-  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
-
-  // baidu analytics
-  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
-
-  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
-
-  // prismjs
-  typeof Prism === 'object' && Prism.highlightAll()
-})
-
-document.addEventListener('pjax:error', e => {
-  if (e.request.status === 404) {
-    pjax.loadUrl('/404.html')
-  }
-})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
+</html>
