@@ -17,23 +17,25 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>你搞懂module.exports和exports了吗？ | Hexo</title>
-  <meta name="description" content="为了更好的理解 module.exports 和 exports 的关系，我们先来巩固下 js 的基础： &#x2F;&#x2F; test.js var a &#x3D; &#123;name: 1&#125;; var b &#x3D; a; console.log(a);  &#x2F;&#x2F; &#123; name: 1 &#125; console.log(b);  &#x2F;&#x2F; &#123; name: 1 &#125;   b.name &#x3D; 2">
+  <title>一篇搞懂 Javascript 原型、原型链 | Hexo</title>
+  <meta name="description" content="原型和原型链JavaScript 中的对象有一个特殊的  [[Prototype]]  内置属性，就是对其他对象的引用，如果在对象上没有找到需要的属性或方法，就会继续在 [[Prototype]] 关联的对象上查找，层层向上找直到找到或者到对象原型为null时结束，这一系列 [[Prototype]] 链接就是原型链。 __proto__  引用了 [[Prototype]]，可以通过 __pro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="你搞懂module.exports和exports了吗？">
-<meta property="og:url" content="https://mmmying.github.io/2021/04/22/p003/index.html">
+<meta property="og:title" content="一篇搞懂 Javascript 原型、原型链">
+<meta property="og:url" content="https://mmmying.github.io/2021/06/15/p008/index.html">
 <meta property="og:site_name" content="mu的技术知识库">
-<meta property="og:description" content="为了更好的理解 module.exports 和 exports 的关系，我们先来巩固下 js 的基础： &#x2F;&#x2F; test.js var a &#x3D; &#123;name: 1&#125;; var b &#x3D; a; console.log(a);  &#x2F;&#x2F; &#123; name: 1 &#125; console.log(b);  &#x2F;&#x2F; &#123; name: 1 &#125;   b.name &#x3D; 2">
+<meta property="og:description" content="原型和原型链JavaScript 中的对象有一个特殊的  [[Prototype]]  内置属性，就是对其他对象的引用，如果在对象上没有找到需要的属性或方法，就会继续在 [[Prototype]] 关联的对象上查找，层层向上找直到找到或者到对象原型为null时结束，这一系列 [[Prototype]] 链接就是原型链。 __proto__  引用了 [[Prototype]]，可以通过 __pro">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://mmmying.github.io/2021/04/22/p003/image.png">
-<meta property="article:published_time" content="2021-04-22T07:48:28.000Z">
-<meta property="article:modified_time" content="2024-10-01T15:44:10.000Z">
+<meta property="og:image" content="https://mmmying.github.io/2021/06/15/p008/image-1.png">
+<meta property="og:image" content="https://mmmying.github.io/2021/06/15/p008/image-2.png">
+<meta property="og:image" content="https://mmmying.github.io/2021/06/15/p008/image-3.png">
+<meta property="article:published_time" content="2021-06-15T02:37:18.000Z">
+<meta property="article:modified_time" content="2025-07-15T03:20:41.392Z">
 <meta property="article:author" content="mu">
-<meta property="article:tag" content="node">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://mmmying.github.io/2021/04/22/p003/image.png">
+<meta name="twitter:image" content="https://mmmying.github.io/2021/06/15/p008/image-1.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://mmmying.github.io/2021/04/22/p003/index.html">
+  <link rel="canonical" href="https://mmmying.github.io/2021/06/15/p008/index.html">
   
     <link rel="alternate" href="/atom.xml" title="mu的技术知识库" type="application/atom+xml">
   
@@ -312,14 +314,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-p003" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-p008" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      你搞懂module.exports和exports了吗？
+      一篇搞懂 Javascript 原型、原型链
     </h1>
   
 
@@ -327,61 +329,140 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/04/22/p003/" class="article-date">
-	  <time datetime="2021-04-22T07:48:28.000Z" itemprop="datePublished">2021-04-22</time>
+	<a href="/2021/06/15/p008/" class="article-date">
+	  <time datetime="2021-06-15T02:37:18.000Z" itemprop="datePublished">2021-06-15</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/node/">node</a>
+    <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/node/" rel="tag">node</a>
+	<a class="article-tag-link-link" href="/tags/javascript/" rel="tag">javascript</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/04/22/p003/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/06/15/p008/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <p>为了更好的理解 module.exports 和 exports 的关系，我们先来巩固下 js 的基础：</p>
-<pre><code class="hljs css">// test<span class="hljs-selector-class">.js</span>
-<span class="hljs-selector-tag">var</span> <span class="hljs-selector-tag">a</span> = &#123;name: <span class="hljs-number">1</span>&#125;;
-<span class="hljs-selector-tag">var</span> <span class="hljs-selector-tag">b</span> = <span class="hljs-selector-tag">a</span>;
-console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-tag">a</span>);  // &#123; name: <span class="hljs-number">1</span> &#125;
-console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-tag">b</span>);  // &#123; name: <span class="hljs-number">1</span> &#125;
- 
-<span class="hljs-selector-tag">b</span><span class="hljs-selector-class">.name</span> = <span class="hljs-number">2</span>;
-console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-tag">a</span>);  // &#123; name: <span class="hljs-number">2</span> &#125;
-console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-tag">b</span>);  // &#123; name: <span class="hljs-number">2</span> &#125;
- 
-<span class="hljs-selector-tag">var</span> <span class="hljs-selector-tag">b</span> = &#123;name: <span class="hljs-number">3</span>&#125;;
-console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-tag">a</span>);  // &#123; name: <span class="hljs-number">2</span> &#125;
-console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-tag">b</span>);  // &#123; name: <span class="hljs-number">3</span> &#125;</code></pre>
+        <h2 id="原型和原型链"><a href="#原型和原型链" class="headerlink" title="原型和原型链"></a>原型和原型链</h2><p>JavaScript 中的对象有一个特殊的  <code>[[Prototype]]</code>  内置属性，就是对其他对象的引用，如果在对象上没有找到需要的属性或方法，就会继续在 <code>[[Prototype]]</code> 关联的对象上查找，层层向上找直到找到或者到对象原型为null时结束，这一系列 <code>[[Prototype]]</code> 链接就是原型链。</p>
+<p><code>__proto__</code>  引用了 <code>[[Prototype]]</code>，可以通过 <code>__proto__.__proto__...</code> 来遍历原型链。</p>
+<p>所有普通的 <code>[[Prototype]]</code> 链最终都会指向内置的 Object.prototype。</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> obj = &#123;&#125;
+<span class="hljs-title class_">Object</span>.<span class="hljs-property">__proto__</span> === <span class="hljs-title class_">Object</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>  <span class="hljs-comment">// true</span>
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">getPrototypeOf</span>(obj) === <span class="hljs-title class_">Object</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>  <span class="hljs-comment">// true</span>
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">getPrototypeOf</span>(<span class="hljs-title class_">Object</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>)  <span class="hljs-comment">// null</span>
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">getPrototypeOf</span>(<span class="hljs-title class_">Function</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>) === <span class="hljs-title class_">Object</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>  <span class="hljs-comment">// true</span></code></pre>
 
-<p>a 是一个对象，b 是对 a 的引用，即 a 和 b 指向同一块内存，所以前两个输出一样。当对 b 作修改时，即 a 和 b 指向同一块内存地址的内容发生了改变，所以 a 也会体现出来，所以第三四个输出一样。当 b 被覆盖时，b 指向了一块新的内存，a 还是指向原来的内存，所以最后两个输出不一样。<br>明白了上述例子后，我们只需知道三点就知道 exports 和 module.exports 的区别了：</p>
+<p>当试图引用对象的属性时会触发 <code>[[Get]]</code> 操作，对于默认的 <code>[[Get]]</code>，第一步是检查对象本身是否具有这个属性，如果无法在对象本身找到，就会继续访问对象的 <code>[[Prototype]]</code> 链。</p>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> obj = &#123;
+    <span class="hljs-attr">id</span>: <span class="hljs-number">1</span>,
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;xx&#x27;</span>
+&#125;
+<span class="hljs-comment">// Object.create()会创建一个对象并把这个对象的 [[Prototype]] 关联到指定的对象</span>
+<span class="hljs-keyword">var</span> obj2 = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">create</span>(obj) 
+obj2 <span class="hljs-comment">// &#123;&#125;</span>
+obj2.<span class="hljs-property">id</span> <span class="hljs-comment">// 1</span>
+obj2.<span class="hljs-property">name</span> <span class="hljs-comment">// &#x27;xx&#x27;</span></code></pre>
+<p>以上例子，创建了一个关联到 obj 的对象 obj2，obj2 的 <code>[[Prototype]]</code> 指向 obj，obj2 本身是个空对象，访问 obj2.id 在 obj2 本身没有找到 id 这个属性，访问到了 <code>[[Prototype]]</code> 找到了这个属性。</p>
+<img src="/2021/06/15/p008/image-1.png" class="" title="alt">
+
+<h3 id="属性设置和屏蔽"><a href="#属性设置和屏蔽" class="headerlink" title="属性设置和屏蔽"></a>属性设置和屏蔽</h3><img src="/2021/06/15/p008/image-2.png" class="" title="alt">
+<img src="/2021/06/15/p008/image-3.png" class="" title="alt">
+
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> obj = &#123;
+    <span class="hljs-attr">a</span>: <span class="hljs-number">1</span>
+&#125;
+<span class="hljs-keyword">var</span> _obj = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">create</span>(obj)
+
+obj.<span class="hljs-property">b</span> = <span class="hljs-number">2</span>  
+<span class="hljs-comment">// obj上没有b这个属性，则添加b，此时obj -&gt; &#123; a: 1, b: 2 &#125;</span>
+
+_obj.<span class="hljs-property">a</span> = <span class="hljs-number">100</span>
+<span class="hljs-comment">// _obj -&gt; &#123; a: 100 &#125;，obj -&gt; &#123; a: 1, b: 2 &#125; 此为上图的1</span>
+
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">defineProperty</span>(obj, <span class="hljs-string">&#x27;b&#x27;</span>, &#123;
+  <span class="hljs-attr">writable</span>: <span class="hljs-literal">false</span>
+&#125;)
+<span class="hljs-comment">// 将obj中的b设置为只读</span>
+
+_obj.<span class="hljs-property">b</span> = <span class="hljs-number">300</span>
+<span class="hljs-comment">// _obj -&gt; &#123; a: 100 &#125;，此时不会在_obj上创建属性b</span>
+
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">defineProperty</span>(_obj, <span class="hljs-string">&#x27;b&#x27;</span>, &#123; <span class="hljs-attr">value</span>: <span class="hljs-number">200</span> &#125;)
+<span class="hljs-comment">// _obj -&gt; &#123; a: 100, b: 200 &#125;</span></code></pre>
+<p>只读属性会阻止 <code>[[Prototype]]</code> 链下层隐式创建同名属性，这样做主要是为了模拟类属性的继承。但实际上并不会发生类似的继承复制，而且这个限制只存在于&#x3D;赋值中，使 Object.defineProperty() 并不会受到影响。</p>
+<h2 id="JS中的‘类’"><a href="#JS中的‘类’" class="headerlink" title="JS中的‘类’"></a>JS中的‘类’</h2><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Foo</span>(<span class="hljs-params"></span>) &#123;
+  ...
+&#125;
+<span class="hljs-keyword">var</span> a = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Foo</span>()
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">getPrototypeOf</span>(a) === <span class="hljs-title class_">Foo</span>.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>; <span class="hljs-comment">// true</span>
+a.<span class="hljs-property">constructor</span> == <span class="hljs-title class_">Foo</span> <span class="hljs-comment">// true</span></code></pre>
+<p>调用 new Foo() 时会创建 a，其中的一步就是给 a 一个内部的 <code>[[Prototype]]</code> 链接，关联到 Foo.prototype 指向的那个对象</p>
 <ul>
-<li>module.exports 初始值为一个空对象 {}</li>
-<li>exports 是指向的 module.exports 的引用</li>
-<li>require() 返回的是 module.exports 而不是 exports</li>
+<li>js 中只有对象</li>
+<li>js 中没有复制机制</li>
+<li>函数本身并不是构造函数，js 中的‘构造函数’可以理解为<code>带 new 的函数调用</code></li>
 </ul>
-<p>我们会看到这样的写法：</p>
-<pre><code class="hljs js"><span class="hljs-built_in">exports</span> = <span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = xxx</code></pre>
+<h2 id="ES6-的-Class"><a href="#ES6-的-Class" class="headerlink" title="ES6 的 Class"></a>ES6 的 Class</h2><p>ES6 的 Class 只是一个语法糖，是 ES5 的构造函数的一层包装</p>
+<pre><code class="hljs js"><span class="hljs-comment">// es5</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">es5Foo</span>(<span class="hljs-params">x, y</span>) &#123;
+	<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> = x;
+	<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = y;
+&#125;
+es5Foo.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">add</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;
+	<span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>;
+&#125;
+<span class="hljs-keyword">var</span> f1 = <span class="hljs-keyword">new</span> <span class="hljs-title function_">es5Foo</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
 
-<p>上面的代码等价于:</p>
-<pre><code class="hljs js"><span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span> = xxx
-<span class="hljs-built_in">exports</span> = <span class="hljs-variable language_">module</span>.<span class="hljs-property">exports</span></code></pre>
+<span class="hljs-comment">// es6</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">es6Foo</span> &#123;
+	<span class="hljs-title function_">constructor</span>(<span class="hljs-params">x, y</span>) &#123;
+		<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> = x;
+		<span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span> = y;
+	&#125;
+	<span class="hljs-title function_">add</span>(<span class="hljs-params"></span>) &#123;
+		<span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">y</span>;
+	&#125;
+&#125;
+<span class="hljs-keyword">var</span> f2 = <span class="hljs-keyword">new</span> <span class="hljs-title function_">es6Foo</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);</code></pre>
 
-<p>原理很简单，即 module.exports 指向新的对象时，exports 断开了与 module.exports 的引用，那么通过 exports &#x3D; module.exports 让 exports 重新指向 module.exports 即可。<br>系统自动给 nodejs 文件增加2个变量 exports 和 module，module 又有一个属性 exports，这个exports 属性指向一个空对象 {}，同时 exports这个变量也指向了这个空对象{}，于是就有了 exports &#x3D;&gt; {} &lt;&#x3D;module.exports<br>这2个 exports 其实是没有直接关系的，唯一的关系是他们初始都指向同一个空对象{}，如果其中一个不指向做个空对象了，那么他们的关系就没有了</p>
-<img src="/2021/04/22/p003/image.png" class="" title="alt">
+<p>类的所有方法都定义在类的 prototype 上，prototype 的 constructor 指向类本身，这与 ES5 一致</p>
+<pre><code class="hljs js">es5Foo.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">constructor</span> === es5Foo  <span class="hljs-comment">// true</span>
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">getPrototypeOf</span>(f1) === es5Foo.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>  <span class="hljs-comment">// true</span>
+
+es6Foo.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>.<span class="hljs-property">constructor</span> === es6Foo  <span class="hljs-comment">// true</span>
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">getPrototypeOf</span>(f2) === es6Foo.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>  <span class="hljs-comment">// true</span></code></pre>
+
+<p>类的内部所有定义的方法都是不可枚举的，这与 ES5 不同</p>
+<pre><code class="hljs js"><span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(es5Foo.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>)  <span class="hljs-comment">// [&#x27;add&#x27;]</span>
+<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">keys</span>(es6Foo.<span class="hljs-property"><span class="hljs-keyword">prototype</span></span>)  <span class="hljs-comment">// []</span></code></pre>
+
+<p> new.target： ES6 为 new 命令引入了一个 new.target 属性，该属性一般用在构造函数之中，返回 new 命令作用于的那个构造函数，如果构造函数不是通过 new 命令或 Reflect.construct() 调用的， new.target 会返回 undefined</p>
+<ul>
+<li>可以用来确保构造函数只能通过 new 调用</li>
+<li>可以用来写不能单独使用、必须继承后才能用的类</li>
+</ul>
+<p>参考：<a target="_blank" rel="noopener" href="https://es6.ruanyifeng.com/#docs/class">Class 的基本语法</a></p>
+<h2 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h2><p>js 中并没有复制机制，new 操作不是创建一个类的多个实例，而是可以创建多个对象并把它们的<code>[[Prototype]]</code> 关联到同一个对象，这个机制就是 js 中的原型继承，通过让一个对象的原型指向另一个对象实现继承</p>
+<p>继承方式：</p>
+<ul>
+<li>原型链继承</li>
+<li>构造函数继承</li>
+<li>组合继承</li>
+<li>原型式继承</li>
+<li>寄生组合式继承</li>
+</ul>
+<p>参考：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain">MDN 继承和原型链</a></p>
 
       
     </div>
@@ -391,7 +472,7 @@ console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://mmmying.github.io/2021/04/22/p003/" title="你搞懂module.exports和exports了吗？" target="_blank" rel="external">https://mmmying.github.io/2021/04/22/p003/</a>
+      <a href="https://mmmying.github.io/2021/06/15/p008/" title="一篇搞懂 Javascript 原型、原型链" target="_blank" rel="external">https://mmmying.github.io/2021/06/15/p008/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -438,12 +519,12 @@ console<span class="hljs-selector-class">.log</span>(<span class="hljs-selector-
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2021/05/19/p004/" title="不要再把 __dirname、__filename 当全局变量了！"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2021/06/20/p009/" title="为什么需要模块化？"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2021/04/08/p002/" title="node中使用jwt实现token身份验证"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2021/06/01/p005/" title="javascript 面试题（持续更新）"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
